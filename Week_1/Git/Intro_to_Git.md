@@ -8,7 +8,7 @@ GitHub and GitLab, not to be confused with Git itself, are online services that 
 
 
 
-<div align="center"> <img src="./.../Images/distributed-git.png" width="500"/></div>
+<div align="center"> <img src="https://github.com/TRNG-00001876/training_content/tree/main/Images/distributed-git.png" width="500"/></div>
 
 ## What is GitHub?
 
