@@ -1,6 +1,2 @@
-This is sample file
-This is sample file in main 
-
-This is third line we add in main
-
+hi hello 
 
