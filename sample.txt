@@ -1,7 +1,0 @@
-This is first line in main
-
-This is second line in main
-
-This is line in branch
-
-
