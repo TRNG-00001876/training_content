@@ -1,0 +1,289 @@
+Database::
+	organized collection of structured information or data .
+
+DBMS -- controls this database.
+		-- it serves as an interface between the database and its end users ,
+		-- MySQL, SQl Server, Oravle, Postgres
+
+Relational database
+Objected oriented
+Distributed
+NoSQL database
+Graph database.
+
+What is SQL? 
+
+
+T-SQL - Transact SQL(Extension of SQL). [SQL SERVER]
+
+Diff betn SQL and TSQL
+
+diff 1: sql is a query language for manipulating data stored in database
+	T- SQL is also a query language, its an extension of SQL primarily  used in SQL server
+
+diff 2:  SQL is open source, T- SQL is developed and owned by Microsoft.
+
+diff 3: SQL statements are executed one at a time, called non-procedural language
+	T-SQL executes in a procedural way.
+
+
+select * from Employee ORDER BY age LIMIT 10 ;// SQL
+
+select TOP 10(*) from users order by age;// T SQL
+
+
+
+
+select ISNULL(0,age) from users;
+
+
+
+DDL:  Data Definition Language
+		- > used to define and modify the database structure	
+		- > Create, alter, drop, truncate, rename
+
+DML: Data manipulation language
+		-> insert, update and delete
+
+DQL: Data Query Language
+		-> Select
+
+DCL: Data Control language
+		->Grant, Revoke,
+
+TCL: Transaction control language
+		-> Begin, commit, rollback,savepoint, 
+
+
+SQL Data types,
+
+
+Numerics:    bit, tinyint, smallint, int, bigint, decimal, numeric, 
+		money(	-922,337,203,685,477.5808 to 922,337,203,685,477.5807),
+	smallmoney(-214,748.3648 to 214,748.3647),
+
+Approximate Numerics:  Float, Real
+
+Data & time:  date(	0001-01-01 through 9999-12-31),
+		 datetime, time, smalldatetime,datetimeoffset,
+
+Charcter strings:  char, varchar, text(0 to 2,147,483,647)
+
+Unicode char:  nchar,nvarchar, ntext
+
+
+To create a table:
+
+Create table [table_name]( pk_column_name data_type PRIMARY KEY, 
+			   column2 data type [ Null | Not null ],
+			   column3 data type [ Null | Not Null ]
+
+			   [ table _constraints ]
+	);
+
+
+Add columns in this table:
+
+		-> add a column
+		-> rename a column
+		-> delete a column
+
+Alter table tablename add colm_name1 data_type constraint, colm_name2 data_type constraint;
+
+Rename a column or table we use system stored procedure sp_rename;
+
+
+Syntax:
+
+EXEC sp_rename 'oldname','newname',[obj,type]
+
+DElete a colums of a table:
+
+"ALter table drop column"
+
+
+Alter table [ table_name ]  DROP column colm1,colm2..coln;
+
+
+Create schema <schema_name> [ Authorization owner_name ]
+
+
+
+
+Relations in SQL Sever:
+
+	one to one
+	one to many
+	many to many
+
+one to one relationship
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+

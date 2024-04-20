@@ -1,0 +1,81 @@
+Keys:
+		1. Primary key
+		2. Foreign key
+		3. Unique key
+		4. Candidate key
+		5. Composite key(compound key or concatenated key)
+		6. Super key
+		7. Alternate key(secondary key)
+
+
+
+Operators:
+		1. Arithmetic Operators ( +, - , *, /, %)
+		2. Comparison Operators ( < , >, !=, <> , Not greater than !>, !<, >=,<=)
+		3. Logical Operators ( And, Or, Not, All, Any, Between, Like, Not Like, Exixts, In, 
+					Is null, Is not null, some )
+Transaction:
+	Properties:
+
+	Atomicity	- A transaction is atomic , which means either all of the statements in the transaction
+			are executed successfully or non of them are executed.
+
+	Consistency	- A database must maintain consistnecy of the databse.
+	Isolation
+	Durability
+
+
+
+BEGIN TRANSACTION
+
+Update contracts 
+set amount =amount -100
+where contract_id=2;
+
+update customers
+set customer_type='CM'
+where customer_id=100;
+
+IF @@ERROR <> 0
+Begin
+	ROLLBACK TRANSACTION
+	PRINT 'Transaction rolled back';
+End
+ELSE
+Begin
+	IF @@ROWCOUNT=0
+	BEGIN 
+	Rollback transaction;
+	print 'Id not found';
+	End
+	Else
+	Begin
+	Commit Transaction
+	Print 'Transaction succesful';
+	End
+End
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
