@@ -1,0 +1,4 @@
+TRiggers:
+
+https://dotnettutorials.net/lesson/magic-tables-in-sql-server/
+

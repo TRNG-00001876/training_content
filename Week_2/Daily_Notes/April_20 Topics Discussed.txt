@@ -1,0 +1,169 @@
+Stored Procedures:
+
+	- collection of SQL statements wrapped within CREATE PROCEDURE/PROC
+		statement.
+	- A procedure always contains a name,paramater lists, and SQL statements.
+	- conditional statements IF or CASE or Loops are allowed.
+CREATE PROCEDURE:
+
+	- create procedure [or] create proc.
+
+/* 
+
+create {procedure | proc } [schema_name].procedure_name
+	[ { @paramter [type_schema_name.]datatype}
+		[ varying][=default][out | output | READONLY]
+	]
+	[with {encryption | REcompile |Execute as Clause }]
+	[ For REplication]
+
+	as 
+	Begin
+	--- sql statements
+	end
+
+To invoke a stored procedure,
+
+Execute procedure_name [or]
+
+Exec procedure_name
+
+Functions:
+	- predefined functions
+	- user defined functions
+
+		- 1. scalar functions
+		- 2. Inline table-valued functions
+		- 3. Multi statement table-valued functions.
+
+scalar functions:
+
+	- takes one or more parameters and returns a single value.
+
+/* Syntax: 
+
+create function [Schema_name.]function_name (parameter_list)
+return data_type as
+begin
+	statements
+	return value
+end
+
+Table- valued function
+Inline table valued function:
+		- return a table as a data type.
+
+
+create function fn_name(parameter)
+returns table
+as
+	return( query)
+
+
+multi table valued functions:
+
+	- returns the result of multiple statements.
+	- we need to define a table variable and return that variable.
+
+triggers:
+		- database object that will executed automatically when a certain
+		event occurs. those event can be insert,update, delete or
+		schema operations.
+
+create trigger trigger_name trigger time trigger event
+on table_name for each row
+begin
+
+	
+end
+
+two virtual tables that will be available specifically for triggers.
+
+	- Inserted
+	- Deleted
+
+-These tables are used to capture the data of the modified row 
+and afetr the event occurs.
+
+
+
+		Inserted table			Deleted table
+Insert		rows to be inserted		empty
+update		new rows modified by the	existing rows modified by the update
+		update
+			
+delete		empty				rows to be deleted
+
+
+USE Employee;
+
+
+-- Create an audit trail table
+CREATE TABLE Rev_Interns_Audit (
+    AuditId INT PRIMARY KEY IDENTITY(1,1),
+    Action VARCHAR(10),
+    InterId INT,
+    Intern_Name VARCHAR(50),
+    City VARCHAR(50),
+    Age INT,
+    Salary DECIMAL(10,2),
+    Adhar_No BIGINT,
+    Timestamp DATETIME DEFAULT GETDATE()
+);
+
+
+-- Create the trigger to capture insertions and deletions in the Rev_Interns table
+CREATE TRIGGER rev_interns_trigger
+ON Rev_Interns
+AFTER INSERT, DELETE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Insert audit records for insertions
+    INSERT INTO Rev_Interns_Audit (Action, InterId, Intern_Name, City, Age, Salary, Adhar_No)
+    SELECT 'INSERT', InterId, Intern_Name, City, Age, Salary, Adhar_No
+    FROM inserted;
+
+    -- Insert audit records for deletions
+    INSERT INTO Rev_Interns_Audit (Action, InterId, Intern_Name, City, Age, Salary, Adhar_No)
+    SELECT 'DELETE', InterId, Intern_Name, City, Age, Salary, Adhar_No
+    FROM deleted;
+END;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
