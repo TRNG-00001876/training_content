@@ -1,0 +1,68 @@
+use employee;
+
+select * from Rev_Interns
+
+set Identity_Insert Rev_Interns ON
+insert into Rev_Interns (Interid,Intern_name,city,age,salary,adhar_no)
+values(1111,'Dhanush','Bangalore',22,56000,1234421);
+
+set Identity_Insert Rev_Interns OFF
+
+insert into Rev_Interns (Intern_name,city,age,salary,adhar_no)
+values('Sowmya','Bangalore',22,56000,1235521);
+
+
+
+insert into Rev_Interns (Interid,Intern_name,city,age,salary,adhar_no)
+values(1122,'Karithika','Bangalore',22,56000,1224421);
+
+create table Rev_Intern_Autit(
+	LogId int Identity(1,1) not null,
+	Interid int not null,
+	Operation nvarchar(10) not null,
+	UpdatedDate Datetime Not Null)
+
+
+ALter trigger trg_Rev_Interns
+on Rev_Interns
+AFTER INSERT,Delete
+as
+	insert into Rev_Intern_Autit(Interid,Operation,UpdatedDate)
+	select Interid,'Insert',GETDATE() from Inserted; -- virtual table
+	
+	insert into Rev_Intern_Autit(InterId,Operation,UpdatedDate)
+	select Interid,'Delete',Getdate() from Deleted;
+
+	
+select * from Rev_Intern_Autit;
+
+insert into Rev_Interns (Interid,Intern_name,city,age,salary,adhar_no)
+values(21213,'Sathish','New Delhi',22,78000,1214421);
+
+delete  from Rev_Interns where Interid=21212;
+
+select * from Rev_Interns;
+
+create trigger trgInsteadofdelete
+on Rev_Interns
+Instead of Delete
+as
+	print 'It is not possible'
+
+
+delete from Rev_Interns  where interid=102;
+
+
+select * from Rev_Interns;
+
+
+
+
+
+
+select * from users;
+
+
+
+
+
