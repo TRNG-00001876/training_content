@@ -1,0 +1,95 @@
+Git
+
+Git vs Github?
+What is a branch in Git? How do you create a new branch in Git? 
+Staging area in Git?
+gitignore
+workflow of git?
+git pull vs git fetch?
+
+
+SDLC
+What is product catalog?
+Story pointing?
+Scrum ceremonies?
+What is a scrum? what is the role of scrum master? 
+Waterfall vs Agile?
+
+Java
+
+JDK, JRE, JVM
+Java wrapper class
+Type casting?
+Access modifiers?
+TreeSet and HashSet?
+Final and finally?
+Encapsulation?Inheritance?Polymorphism?Abstraction? 
+Method overloading and overriding?
+super and this keyword?
+Collection interface?
+abstract class vs interface? 
+Queue interface? methods? purpose
+Set Interface?methods? purpose
+Stream API?
+Lambda Expression and Functional interface?
+Use of Maven?POM.xml?
+Exception handling?
+How to create custom exception?
+Throw, throws and throwable?
+StringBuilder and StringBuffer?
+Stack vs Heap
+Map?
+Static keyword and final keyword?
+Checked and Uncheked Exceptions?
+
+
+JDBC
+
+ResultSet?
+DAO
+Difference b/w simple and prepared statements?
+try with resources?
+Statement?PreparedStatement?CallableStatement?
+
+Testing
+
+JUnit?
+TDD?
+Unit testing?
+Annotation used in JUnit?
+What is Mockito?
+What are stubs ?
+
+
+SQL Server
+
+Delete vs Drop vs Truncate
+TCL, DCL, DDL, DQL, DML commands
+Cascade?
+Different keys in SQL?
+Primary key vs foreign key?
+
+Normalization?
+Joins and types?
+Views?
+Index?
+Triggers?
+Stored procedure?
+
+Referential Integrity?
+What are the data constraints that can be applied when creating a table in SQL?
+Why and where do you use Scalar and Aggregate functions in SQL? 
+GroupBy, Having, Orderby?
+Different clauses in SQL?
+update vs alter?
+
+REST
+
+What makes a service “RESTful”? What are its components?
+CRUD operations in REST?
+Explain Http Methods
+What does a Http response and request contains
+Authentication vs Authorization?
+HTTP cookies ? Session?
+Status codes?
+HTTP lifecycle?
