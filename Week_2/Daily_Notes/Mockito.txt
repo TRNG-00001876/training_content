@@ -1,0 +1,73 @@
+Unit Testing vs Integration Testing
+
+
+Mockito:
+
+	- It is a unit testing framework that is going to simplify the
+	task of automation testing.
+	- It is one of the popular mocking framework that we use in Java to create and configure mock object 
+	for unit tests.
+
+creare a mock using two ways:
+	1. @mock
+	2. Mockito.mock(Class)
+	
+Annotations:
+
+
+	@mock annotation:
+		is actually shorthand way of creating mock objects.
+
+	@InjectMocks
+		Inject the mock objects to the mocked object instance
+	@Spy
+		Allo spying on real object
+	@Captor
+		captures argument values for further assertions.
+	@ExtendWith(MockitoExtension.class)
+		
+	
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.*;
+
+public class CalculatorTest {
+    @Test
+    public void testAddition() {
+        Calculator mockedCalculator = mock(Calculator.class);
+        when(mockedCalculator.add(2, 3)).thenReturn(5);
+
+        assertEquals(5, mockedCalculator.add(2, 3));
+       
+    }
+
+    @Test
+    public void testSubtraction() {
+        Calculator mockedCalculator = mock(Calculator.class);
+        when(mockedCalculator.subtract(5, 3)).thenReturn(2);
+
+        assertEquals(2, mockedCalculator.subtract(5, 3));
+
+    }
+}
+
+
+//Calculator.java
+
+public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+}
+
+
+	
+
+
+	
+
+

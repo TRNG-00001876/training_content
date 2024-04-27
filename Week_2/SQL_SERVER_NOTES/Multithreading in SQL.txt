@@ -1,0 +1,185 @@
+Multithreading in SQL:
+
+	- Referes to the ability of a DBMS to execute multiple threads concurrently.
+	- We can perform multiple tasks at the same time rather than doing it sequentially.
+		Improved resource utilization
+		Improved performace
+		Better Scalability
+		Enhanced reliability
+		Improved user experience.
+
+
+Implementing Multithrading in SQL:
+	- WE can use SQL Procedures.
+	- SQL PRocedurea are group of SQL statements grouped together such as updation or retrieving
+
+
+use employee;
+
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    CustomerID INT,
+    OrderDate DATE,
+    OrderTotal MONEY
+);
+
+INSERT INTO Orders
+VALUES
+    (1, 1001, '2023-04-01', 100.00),
+    (2, 1002, '2023-04-02', 200.00),
+    (3, 1001, '2023-04-03', 150.00),
+    (4, 1003, '2023-04-04', 300.00),
+    (5, 1001, '2023-04-05', 250.00),
+    (6, 1002, '2023-04-06', 175.00),
+    (7, 1004, '2023-04-07', 120.00),
+    (8, 1001, '2023-04-08', 180.00);
+
+	select * from orders;
+
+-- chunking
+
+create procedure UpdateOrderTotals
+	@ChunkSize INT =1000
+	as
+	begin
+		declare @StartOrderID int =1, @EndOrderId INT;
+		select @EndOrderId=max(orderid) from orders;
+		while @StartOrderID <= @EndOrderId
+		begin
+				declare @CurrentEndOrderId INT=@startOrderID + @ChunkSize-1;
+				if @CurrentEndOrderId >@EndOrderId
+					set @CurrentEndOrderId=@EndOrderId
+				-- update order totals with a 20 % discount for the current chunk
+				update orders set OrderTotal=OrderTotal-(OrderTotal*0.20)
+				where orderid between @StartOrderID and @CurrentEndOrderId; -- 3 2
+
+				set @StartOrderID=@CurrentEndOrderId+1;
+		end
+end
+
+exec UpdateOrderTotals @chunksize=3;
+
+
+Synchronization and Deadlock:
+
+	- refers to the process of coordinating access to shared resources by multiple threads.
+	- We can be achieved that using locks,semaphores and mutexes.
+
+create table Products(
+ProductId int Primary key,
+Quantity int)
+
+Insert into products(ProductId,Quantity) values(1,100);
+
+
+begin transaction
+	select * from products 
+	select * from products with (UPDLOCK) where productid=1;
+	select * from products
+	waitfor delay '00:00:05';
+
+	update products set quantity=quantity -10 where productid=1;
+commit transaction
+
+
+Deadlock:
+
+	When two or more threads are waiting for each other to relase a resource, leading to a standstill.
+
+	SET DEADLOCK PRIORITY
+
+Begin transaction
+
+	update Accounts
+		set Balance=Balnce - 200
+			where AccountId=111;
+	update Accounts 
+		set Balance=Balance +200
+			where AccountID=123;
+Commit Transaction
+
+
+
+
+Parallel Processing:
+
+	Parellel processing allows multiple threads to be processed concurrently on different processors .
+	
+	We  use MAXDOP option to specify the maxiumum degree of parallelism for a query
+
+
+create table Orders(
+	OrderId INT Primary key,
+	CustomerID INT,
+	OrderDate Date,
+	OrderTotal MONEY
+	)
+
+INSERT INTO Orders
+VALUES
+    (1, 1001, '2023-04-01', 100.00),
+    (2, 1002, '2023-04-02', 200.00),
+    (3, 1001, '2023-04-03', 150.00),
+    (4, 1003, '2023-04-04', 300.00),
+    (5, 1001, '2023-04-05', 250.00),
+    (6, 1002, '2023-04-06', 175.00),
+    (7, 1004, '2023-04-07', 120.00),
+    (8, 1001, '2023-04-08', 180.00);
+
+Alter procedure UpdateOrderTable
+as
+begin
+	
+
+	update Orders
+	set OrderTotal=OrderTotal-OrderTotal*0.2
+	OPTION(MAXDOP 4);
+End
+
+Exec UpdateOrderTable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

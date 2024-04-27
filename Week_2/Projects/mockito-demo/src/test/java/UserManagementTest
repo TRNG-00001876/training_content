@@ -1,0 +1,22 @@
+import org.example.EmailService;
+import org.example.UserManager;
+import org.junit.Test;
+import org.mockito.Mockito;
+
+public class UserManagerTest {
+
+    @Test
+    public void testRegisterUser() {
+        // Create a mock object for EmailService
+        EmailService emailService = Mockito.mock(EmailService.class);
+
+        // Create an instance of UserManager with the mock EmailService
+        UserManager userManager = new UserManager(emailService);
+
+        // Call the registerUser method
+        userManager.registerUser("test@example.com");
+
+        // Verify that the sendEmail method of EmailService was called with the expected arguments
+        Mockito.verify(emailService).sendEmail("test@example.com", "Welcome!", "Thank you for registering.");
+    }
+}

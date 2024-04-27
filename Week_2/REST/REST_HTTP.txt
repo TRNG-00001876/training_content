@@ -1,0 +1,180 @@
+RESTful Web Services
+
+	-REpresentational State Transfer.
+	- Uses HTTP protocol for data communication.
+	- Each resource is identified by URIs(Uniform Resource Identifier).
+	- Multiple URIs can refer to the same resource.
+	- REST can use various format - Common format is JSON
+Messages:
+
+	- REST uses protocols to communicate betn client and Server.
+	- A client send a message as an HTTP Request and the server sends a responce message as an HTTP 
+	Response.
+	- Both of these contain message data and also metadata.
+
+
+Principles of REST (**********IMP*********)
+
+1. Uniform Interface
+	- Our service will have an interface defined 4 constraints
+		1. Identification of resources
+
+		/Pokemon/AllPokemon
+		/Employees/AllEmployees
+		2. Manipulation of resources through representation
+		3. Self - description message
+		4. HATEOS - (Hypermedia as the engine of application state
+
+2. Client -server
+3. Layered System
+4. Stateless.
+5.Cacheable
+6. Code on Demand(Optional)
+
+HTTP Life Cycle:
+
+An overview of what happens if you put in a url in your browser and out comes a website
+
+- Client (your browser) will send a request (the url you sent)
+- The server will receive that request and will do some processes
+- The server will send an appropriate response (html, css, js, json, etc.)
+- The client will receive the response and the browser will process that response
+
+
+DNS ( Domain Name System)
+
+- It is essentially a directory of names and ip address
+- It translates a pretty loorking name of a website (www.google.com) into some numerical ip address ranging from (0.0.0.0 - 255.255.255.255) for locating the right server and to process the http request
+-Main reason is the same reason why you save people's phone number in contact in a form of a name instead of just their phone number
+		It is easier to remember!
+
+
+****HTTP Request*****
+
+
+* Verb — Represents HTTP methods such as GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS, etc.
+
+* URI — Represents the Uniform Resource Identifier to identify the resource on the server.
+
+* HTTP Version — Indicates the HTTP version ex -HTTP v1.1
+
+* Request Header — Contains the metadata for the HTTP request. These are represented as Key-Value Pairs.
+
+* Request Body — Message Content.
+
+
+****HTTP Response****
+
+Response Code — Represents the Server status. Ex — 200 for response OK, 404 for a resource not found.
+
+HTTP Version — Indicates the HTTP version ex -HTTP v1.1
+
+Response Header — Contains the metadata for the HTTP response. These are represented as Key-Value Pairs.
+
+Response Body — Message Content.
+
+
+****HTTP Verbs****
+
+1. GET
+	- Used to request data.
+	- Query data is sent in the URL of the request. Hence GET requests have a length limit. 
+		And never be used to deal with sensitive data.
+	- Since data is stored in the URL GET request has no body. But in case of a successful 
+		response, the response may contain a message body.
+	- It can be cached.
+ 	- It can be seen in the browser history.
+	- It can be bookmarked.
+	- Should not be used to modify data. Should be used only to request data.
+	- Since GET Requests are read-only they are called Safe operations. 
+		(An HTTP method is safe if it doesn’t alter the state of the server. Which means a 
+		method is safe if it only leads to a read-only operation in the server)
+	- Is idempotent — Since GET Request is safe it is Idempotent. 
+		(Idempotent means If an HTTP method can be invoked several times in a row and leave the 
+		server in the same state. Which means an idempotent method should not have side effects.
+		 All safe methods are Idempotent. But all the Idempotent methods are not safe.)
+
+2. POST
+	- Used to create a new resource.
+	- Data are stored in the request body. Hence don’t have a limit.
+	- The Data type of the body is stored in the Header under the Content-Type header.
+	- Not safe	- since this alters the server state.
+	- Not Idempotent — Can have side effects like In some cases when called multiple times 
+		the same resource may be created multiple times.
+	
+3. PUT
+	- used to create/replace a resource
+	- Not Cachable
+	- Not safe
+	- Is idempotent - When called multiple times the result is same. There is no side effect 
+				since PUT replace the whole resource.
+
+
+4. Patch
+	-used to update a resource
+	- PATCH only contains the information that should be updated in a resource. If the resource 
+	doesn’t exist it returns an error. The updated information is stored in the request body.
+	- Not Cacheable.
+	- Not safe.
+	- PATCH is not idempotent. It is considered not idempotent because in some cases it can be 
+		idempotent and some other cases it can’t.
+5. Delete
+	- Used to delete a resource
+	- Data can be stored in the Request body. But most common practice is to send the resource id 
+		in the URL as a parameter.
+	- Not safe.
+	- Idempotent — Delete Method is idempotent because if it was invoked multiple times it does the 
+		same thing.
+
+
+6. HEAD
+
+7. Options
+
+
+Both *HTTP VERBS* and *HTTP METHODS* are same . They refere to the same concept.
+
+
+HTTP Status Code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			

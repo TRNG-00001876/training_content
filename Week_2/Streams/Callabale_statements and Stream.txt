@@ -1,0 +1,204 @@
+JDBC Callable Statement API
+
+	- It is an interface(Child of PreparedStatement) 
+	- java.sql
+	- CallabaleStatement st=con.prepareCall(String s);
+	- st.close();
+
+
+	{call<<stored_proc_name>>(???)}	
+	- Methods available
+		void close()
+		int executeUpate()- it returns no of rows afftected after the execution.
+		Connection getConnection() -
+		boolean isClosed()
+		ResultSet executeQuery()- is used to execute stored procedue that returns resultsets 
+					similar to select statement.
+		registerOutParamter(int paramterindex,intsqltype)
+
+
+Stream API:
+
+	Stream is a sequence of objects that supports various methods which can be pipelined
+	to produce the desired result.
+
+	It is not a data structure but it will take the input from the collections,Arrays,I/O channels.
+
+	It wont change the original data structure, they only provide the result as per the pipelined methods
+
+package org.example;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class Main {
+    public static void main(String[] args) {
+
+        List<Employee> empList=getEmpList();
+        // We use filter method to fliter the data based on the condn
+        //empList.stream().filter(e->e.getGender().equals("Female")).forEach(e->System.out.println(e));
+
+        //System.out.println("----------------------------------------------------------------------");
+
+        // sort() it will sort the emp list according to cond
+        //empList.stream().sorted(Comparator.comparing(Employee::getRating)).forEach(e->System.out.println(e));
+
+        //System.out.println("----------------------------------------------------------------------");
+
+        // in descending order
+       // empList.stream().sorted(Comparator.comparing(Employee::getRating).reversed()).forEach(e->System.out.println(e));
+
+        //Match method
+        /*boolean isSalary=empList.stream().anyMatch(e->e.getSalary()>100000);
+        System.out.println(isSalary);
+
+        boolean isSalary1=empList.stream().allMatch(e->e.getSalary()>100000);
+        System.out.println(isSalary);
+
+        boolean isSalary2=empList.stream().noneMatch(e->e.getSalary()>100000);
+        System.out.println(isSalary);*/
+
+        // max
+
+       // empList.stream().max(Comparator.comparing(Employee::getSalary)).ifPresent(System.out::println);
+
+        // group by
+        //Map<Integer, List<Employee>> empByRating=empList.stream().collect(Collectors.groupingBy(Employee::getRating));
+
+        //empByRating.forEach(((rating,emplist)->{System.out.println(rating);emplist.forEach(System.out::println);}));
+
+
+        //empList.stream().filter(e->e.getGender().equals("Male"))
+          //      .filter(e->e.getSalary()>50000)
+          //      .forEach(System.out::println);
+
+    List<String> femaleNames=empList.stream()
+            .filter(e->e.getGender().equals("Female"))
+            .map(Employee::getLastName)
+            .map(String::toUpperCase)
+            .collect(Collectors.toList());
+
+
+System.out.println(femaleNames);
+    }
+    public static List<Employee> getEmpList()
+    {
+        return Arrays.asList(
+                new Employee("59-385-1088","Zacharias","Schwerin","zchwerin@gmail.com","Male","True",101146,0),
+                new Employee("73-274-6476","Kyle","Frudd","kfrudd1@ovh.net","Male","FALSE",29310,2),
+                new Employee("85-939-9584","Axe","Gumb","agumb2@twitter.com","Female","FALSE",62291,4),
+                new Employee("08-180-8292","Robinet","Batterham","rbatterham3@last.fm","Male","FALSE",142439,4),
+                new Employee("21-825-2623","Ulick","Burrel","uburrel4@google.ru","Male","FALSE",128764,5),
+                new Employee("66-708-5539","Tailor","Ridding","Ridding","Female","FALSE",152924,4),
+                new Employee("81-697-2363","Joete","Braybrooke","jbraybrooke6@prnewswire.com","Male","TRUE",128907,0),
+                new Employee("63-019-1110","Elroy","Baverstock","ebaverstock7@ehow.com","Male","TRUE",2510,0)
+        );
+    }
+}
+
+//EMployee.java
+
+package org.example;
+
+
+public class Employee {
+    private String empId;
+    private String firstName;
+
+    public String getEmpId() {
+        return empId;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getNewJoiner() {
+        return newJoiner;
+    }
+
+    public void setNewJoiner(String newJoiner) {
+        this.newJoiner = newJoiner;
+    }
+
+    public int getSalary() {
+        return Salary;
+    }
+
+    public void setSalary(int salary) {
+        Salary = salary;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public void setEmpId(String empId) {
+        this.empId = empId;
+    }
+
+    private String lastName;
+    private String email;
+    private String gender;
+    private String newJoiner;
+    private int Salary;
+    private int rating;
+
+
+
+    public Employee(String empId, String firstName, String lastName, String email, String gender, String newJoiner, int Salary,int rating) {
+        this.empId = empId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.gender = gender;
+        this.newJoiner = newJoiner;
+        this.Salary = Salary;
+        this.rating = rating;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    @Override
+            public String toString()
+    {
+        return "Employee{"+"empId='"+empId+'\''+
+                ",firstName='"+firstName+'\''+
+                ",lastName='"+lastName+'\''+
+                ",email='"+email+'\''+
+                ",gender='"+gender+'\''+
+                ",newJoiner='"+newJoiner+'\''+
+                ",Salary='"+Salary+'\''+
+                ",rating='"+rating+'\''+'}';
+
+    }
+}
+
+
+
+
+
