@@ -7,11 +7,11 @@ The Personal Portfolio Website project aims to create a professional online pres
 Requirements:
 
 HTML Foundation:
-- Implement a well-structured HTML document using appropriate tags (<!DOCTYPE html>, <html>, <head>, <title>, <body>).
+- Implement a well-structured HTML document using appropriate tags `(<!DOCTYPE html>, <html>, <head>, <title>, <body>).`
 Utilize semantic HTML tags for better accessibility and SEO.
 
 HTML Tags:
-- Utilize various HTML tags to structure the content logically (e.g., <header>, <nav>, <section>, <article>, <footer>).
+- Utilize various HTML tags to structure the content logically `(e.g., <header>, <nav>, <section>, <article>, <footer>).`
 
 HTML Document Structure and DOM:
 - Create a clear document structure with sections for different parts of the portfolio (e.g., About Me, Projects, Contact).
@@ -21,7 +21,7 @@ Elements and Attributes:
 - Utilize attributes such as src, href, and alt appropriately.
 
 Common Tags:
-- Incorporate common HTML tags like headings (<h1>, <h2>, etc.), paragraphs (<p>), lists (<ul>, <ol>), and images (<img>).
+- Incorporate common HTML tags like headings `(<h1>, <h2>, etc.), paragraphs (<p>), lists (<ul>, <ol>), and images (<img>).`
 
 
 CSS Foundation:
