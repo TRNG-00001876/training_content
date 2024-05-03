@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JavaScript try-catch-finally Statement</title>
+</head>
+<body>
+    <script>
+    // Assigning the value returned by the prompt dialog box to a variable
+    let num = prompt("Enter a positive integer between 0 to 100");
+    
+    // Storing the time when execution start
+    let start = Date.now();
+    
+    try {
+        if(num > 0 && num <= 100) {
+            alert(Math.pow(num, num)); // the base to the exponent power
+        } else {
+            throw new Error("An invalid value is entered!");
+        }
+    } catch(e) {
+        alert(e.message);
+    } finally {
+        // Displaying the time taken to execute the code
+        alert("Execution took: " + (Date.now() - start) + "ms");
+    }
+    </script>
+    <p><strong>Note:</strong> The <code>Math.pow(base, exponent)</code> method returns a number representing the given base taken to the power of the given exponent i.e. <code>base<sup>exponent</sup></code>.</p>
+</body>
+</html>
