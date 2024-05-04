@@ -3,16 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript and HTML Example</title>
+    <title>DOM EXAMPLE</title>
+    <style>
+        #myDiv p{
+            background-color:rgb(255, 205, 218) ;
+            padding:10px;
+            border: 1px solid blue;
+        }
+    </style>
 </head>
 <body>
-    <div id="myId">hi this is sowmya</div>
-    
+   <div id='myDiv'></div>
     <!-- JavaScript code -->
     <script>
-        // JavaScript code
-        let myElement = document.getElementById("myId");
-        console.log(myElement);
+       // alert(document.getElementById("HEADING"));
+       /* var ele=document.getElementsByClassName('class_1');
+        for(var i=0;i<ele.length;i++)
+        {
+            alert(ele[i].textContent);
+        }*/
+       /* var par=document.querySelectorAll('p');
+        par.forEach(function(pe)
+    {
+        pe.textContent="This is the modified content of the HTML PAragraph";
+
+    })*/
+
+    var newEle=document.createElement('p');
+    newEle.setAttribute('class','paragraph')
+    newEle.style.color='red';
+    newEle.textContent='This is a dynamically created paragraph in script';
+    document.getElementById('myDiv').appendChild(newEle);
+       
+
+
     </script>
 </body>
 </html>

@@ -1,0 +1,22 @@
+<html>
+    <head>
+    <tile>Inline Event handler Example</tile>
+</head>
+
+<body>
+    <!--<button onclick="alert('Hi I am here!!!!!')">Click me</button>
+    <button id="myButton">Click me </button>-->
+    <input type="text" id="myInput">
+    <script>
+       /* function sample()
+        {
+            alert('Hello team!!! Happy Saturday!!!!!');
+        }
+        document.getElementById('myButton').addEventListener('click',sample);*/
+        document.getElementById('myInput').onkeyup=function()
+        {
+            alert('Key pressed');
+        }
+    </script>
+</body>
+</html>
