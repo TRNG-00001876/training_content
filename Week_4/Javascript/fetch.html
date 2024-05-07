@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>
+            FETCH API EXAMPLE
+        </title>
+    </head>
+    <body>
+        <h1>Fetch API Example</h1>
+        <button onClick="fetchData()">Fetch some joke</button>
+        <div id="Output"></div>
+
+        <script>
+            function fetchData(){
+                fetch('http://api.weatherapi.com/v1/current.json?key={API_KEY}&q=New York')
+                .then(response=>{
+                    if(!response.ok)
+                    {
+                        throw new Error("Network connectivity issues are there!!!!");
+                    }
+                    return response.json();
+                })
+                .then(data=>{
+                    document.getElementById('Output').innerHTML=JSON.stringify(data,null,2);
+                })
+                .catch(error => console.log("some error"));
+            }
+        </script>
+    </body>
+</html>
