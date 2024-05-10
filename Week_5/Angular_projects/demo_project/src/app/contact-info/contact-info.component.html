@@ -1,4 +1,9 @@
-<p>contact-info works!</p>
+<h2> Example of Two way data binding</h2>
 
-<p> Welcome this is Revature's page</p>
-<p>{{companyName +' '+CEO+' '+Address}}</p>
+<!--<input type="text" [value]="name" (input)="name=$event.target.value">
+-->
+
+<input type="text" name="output" [(ngModel)]="output">
+<p> Hello {{output}} , Welcome to Revature Training</p>
+
+<button (click)="ClearName()">Clear</button>

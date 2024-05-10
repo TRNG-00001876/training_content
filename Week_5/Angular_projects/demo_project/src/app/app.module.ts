@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HelloTeamComponent} from './hello-team.component';
 import { ContactInfoComponent } from './contact-info/contact-info.component'
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,9 +14,10 @@ import { ContactInfoComponent } from './contact-info/contact-info.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent,HelloTeamComponent,ContactInfoComponent]
+  bootstrap: [ContactInfoComponent]
 })
 export class AppModule { }
