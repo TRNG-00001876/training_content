@@ -17,6 +17,6 @@ import { ContactInfoComponent } from './contact-info/contact-info.component'
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,HelloTeamComponent,ContactInfoComponent]
 })
 export class AppModule { }

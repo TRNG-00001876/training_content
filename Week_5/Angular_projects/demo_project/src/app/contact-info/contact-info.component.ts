@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './contact-info.component.css'
 })
 export class ContactInfoComponent {
-
+    companyName='Revature';
+    CEO='Bharath Ashwin';
+    Address='Workafella , 12th floor Teynampet';
 }

@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'demo_project';
+  title = 'Hi team this is example for property binding';
+  isDisable=false;
+  msg='';
+  clickCount = 0;
+
+  clickMe()
+  {
+    this.clickCount++;
+  }
+  clickMsg()
+  {
+    this.msg='Hello team'+this.clickCount;
+  }
 }
