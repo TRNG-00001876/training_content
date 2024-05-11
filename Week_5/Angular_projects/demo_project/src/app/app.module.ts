@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import {HelloTeamComponent} from './hello-team.component';
 import { ContactInfoComponent } from './contact-info/contact-info.component'
 import { FormsModule } from '@angular/forms';
+import { CapitalizePipe } from './capitalize.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     HelloTeamComponent,
-    ContactInfoComponent
+    ContactInfoComponent,
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,
@@ -18,6 +20,6 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [],
-  bootstrap: [ContactInfoComponent]
+  bootstrap: [HelloTeamComponent]
 })
 export class AppModule { }

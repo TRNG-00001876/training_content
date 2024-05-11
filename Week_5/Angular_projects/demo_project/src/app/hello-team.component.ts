@@ -5,6 +5,8 @@ import {Component} from'@angular/core'
     templateUrl:'./hello-team.component.html',
     styleUrls:['./hello-team.component.css']
 })
-export class HelloTeamComponent{
+
+export class HelloTeamComponent {
     title='Revature_Randstad Java Cohort';
+   
 }
