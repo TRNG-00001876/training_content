@@ -1,10 +1,18 @@
 <h1> {{title}}</h1>
 
-<ul *ngIf="showMe">
-  <li *ngFor="let m of movies">
-    {{m.title}} -- {{m.director}}
-  </li>
-</ul>
+<div *ngIf="showMe;then thenBlock else elseBlock">
+  
+</div>
+<ng-template #thenBlock>
+  <ul>
+    <li *ngFor="let m of movies">
+      {{m.title}} -- {{m.director}}
+    </li>
+  </ul>
+</ng-template>
+<ng-template #elseBlock >
+  <p> Movies are not listed.... sorry for the inconvenience</p>
+</ng-template>
 
 <button (click)="hideList()"> Click to hide the List</button>
 <button (click)="showList()"> Click to shpw the List</button>
