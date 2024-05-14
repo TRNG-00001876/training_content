@@ -1,0 +1,15 @@
+{
+  "name": "ts_code_snippets",
+  "version": "1.0.0",
+  "description": "A brief description about this package",
+  "main": "hello.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "core-decorators": "^0.20.0"
+  }
+}
