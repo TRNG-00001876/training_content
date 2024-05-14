@@ -1,0 +1,9 @@
+<p>comp-2 works!</p>
+<div>
+    <h2>Add Employee</h2>
+    <input type="text" placeholder="Name" [(ngModel)]="newEmp.name">
+    <input type="text" placeholder="Position" [(ngModel)]="newEmp.position">
+    <input type="number" placeholder="salary" [(ngModel)]="newEmp.salary">
+
+    <button (click)="addEmployee()">Add Employee</button>
+</div>

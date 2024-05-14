@@ -1,0 +1,11 @@
+<p>comp-1 works!</p>
+
+<div>
+    <h2> EmployeeList</h2>
+    <ul>
+        <li *ngFor="let e of employees; let i =index">
+            {{e.name}} - {{e.position}}-{{e.salary}}
+            <button (click)="deleteEmployee(i)">Delete</button>
+        </li>
+    </ul>
+</div>
