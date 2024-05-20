@@ -1,0 +1,67 @@
+**Practical questions?**
+
+1. how to get values from path and query params
+2. Implement a Spring MVC controller method that accepts a Student object as a request body and returns a custom response object containing the student's name and age.
+3. create a spring boot application using spring boot actuator endpoints -
+4. create a restful API in spring
+5. Write a code to define custom SQL quesries in Spring Data?
+6. Create a simple Spring MVC controller with a method mapped to handle GET requests. 
+7. code snippet for @RequestMapping
+8. Testing RESTful APIs with MockMVC and RestTemplate?
+9. In a Spring MVC application, how can you pass data from a controller to a view?
+
+In a Spring MVC application, you can pass data from a controller to a view using the Model or ModelMap objects. These objects are used to store data that needs to be rendered in the view.
+Here's an example of how you can pass data from a controller to a view using the Model object:
+javaCopy codeimport org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class MyController {
+
+    @GetMapping("/hello")
+    public String hello(Model model) {
+        // Add data to the model
+        model.addAttribute("message", "Hello, Spring MVC!");
+
+        // Return the view name
+        return "hello";
+    }
+}
+In this example:
+
+The hello method in the controller is annotated with @GetMapping("/hello"), which maps the GET request to the /hello endpoint.
+The Model object is passed as a parameter to the hello method. This object is used to store data that needs to be rendered in the view.
+The model.addAttribute("message", "Hello, Spring MVC!") line adds a key-value pair to the model. The key is "message", and the value is "Hello, Spring MVC!".
+The return "hello"; line returns the name of the view that should be rendered. In this case, it's "hello", which typically corresponds to a file named hello.jsp or hello.html in the configured view resolver's directory.
+
+In the view (e.g., hello.jsp), you can access the data from the model using the Expression Language (EL) syntax:
+jspCopy code<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello</title>
+</head>
+<body>
+    <h1>${message}</h1>
+</body>
+</html>
+In this example, ${message} will be replaced with the value "Hello, Spring MVC!" that was added to the model in the controller.
+You can also use the ModelMap object instead of the Model object. The ModelMap extends the Model interface and provides additional methods for working with the model data.
+javaCopy codeimport org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class MyController {
+
+    @GetMapping("/hello")
+    public String hello(ModelMap modelMap) {
+        // Add data to the model
+        modelMap.addAttribute("message", "Hello, Spring MVC!");
+
+        // Return the view name
+        return "hello";
+    }
+}
+10. If you have a service class then how will you refactor it so that you use dependency injection (in the constructor)..
+
