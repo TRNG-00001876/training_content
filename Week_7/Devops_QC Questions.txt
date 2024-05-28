@@ -1,0 +1,65 @@
+Devops
+1. DevOps Azure Cloud
+2. CICD concept
+3. Continuous delivery vs continuous deployment
+4. Explain about Azure Devops
+5. CI/CD Pipeline and concepts
+	Explain about steps, stage, Jobs and task
+6. How do I build a CI pipeline? 
+7. what's in CI pipeline? 
+8. Explain about jobs.
+9. What is DevOps? What is the goal of various DevOps processes?
+10. Explain CI/CD. What is the difference between Continuous Deployment and Continuous Delivery
+11. What tools have you used to achieve CI/CD? Explain how you’ve setup and used them
+12. What is a DevOps pipeline? Explain the steps to setting one up
+13. Why is monitoring and logging important for DevOps?
+14. What is a "build"? What is the end result of a build?
+
+
+Docker
+1. Docker benefits?
+2. What's the difference between Dockerfile and Docker Image?
+3. What are we solving with containers?
+4. What do you run in a container?
+5. command to build and run the docker image and container?
+6. How do you create docker image?
+7. How do you share your docker images?
+8. Benefits of containerization?
+9. Docker cli commands used
+10. What is a container? How is it different from a virtual machine?
+11. What is a Docker image? Container?
+12. How is a Docker image different from a Docker container? How are the read/write layers different?
+13. List the steps to start Docker, create a Docker image, and spin up a container
+14. What are some other Docker commands?
+15. What is the Docker Daemon?
+16. What is a container registry? How would you retrieve and upload images to DockerHub?
+17. What is the benefit to an image being built in Layers?
+
+
+
+
+Azure
+1. Cloud Service Types
+2. Benefits of Cloud? 
+3. Service types?
+4. What is "the cloud" or "cloud computing" and why is it so popular now?
+5. What is Azure SQL Database?
+6. How can you secure data in Azure SQL Database?
+7. What is firewall and how do you configure firewall in Azure SQL DB?
+8. What is Azure App Service?
+9. Explain the main components of Azure App Service.
+10. How can you deploy a web app to Azure App Service?
+11. How can you scale an Azure Web App?
+12. What is an Azure Resource Group and what are its benefits?
+13. What happens when you delete a Resource Group?
+14. What is the Azure Resource Manager (ARM), and how does it relate to Resource Groups?
+15. How can you deploy resources to an Azure Resource Group?
+16. 
+
+github actions?
+
+1. What data is important to NOT check into git?
+2. Explain the relationships between "triggers", "jobs" and "steps."
+3. What can built-in triggers in GHA be used for? What events can trigger a workflow?
+4. In GHA, how can you integrate unit testing into the workflow?
+5. 

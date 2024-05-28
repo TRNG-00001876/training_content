@@ -30,7 +30,7 @@ constructor(private http: HttpClient )
   getAllCustomer()
   {
     
-    this.http.get("http://localhost:8080/api/v1/customer/getAllCustomers")
+    this.http.get("https://springboot-app-azure.azurewebsites.net/api/v1/customer/getAllCustomer")
   
     .subscribe((resultData: any)=>
     {
@@ -49,7 +49,7 @@ constructor(private http: HttpClient )
       "mobile" : this.mobile
     };
  
-    this.http.post("http://localhost:8080/api/v1/customer/createCustomer",bodyData,{responseType: 'text'}).subscribe((resultData: any)=>
+    this.http.post("https://springboot-app-azure.azurewebsites.net/api/v1/customer/createCustomer",bodyData,{responseType: 'text'}).subscribe((resultData: any)=>
     {
         console.log(resultData);
         alert("Employee Registered Successfully");
@@ -77,7 +77,7 @@ constructor(private http: HttpClient )
       "mobile" : this.mobile
     };
     
-    this.http.put("http://localhost:8080/api/v1/customer/updateCustomer",bodyData,{responseType: 'text'}).subscribe((resultData: any)=>
+    this.http.put("https://springboot-app-azure.azurewebsites.net/api/v1/customer/updateCustomer",bodyData,{responseType: 'text'}).subscribe((resultData: any)=>
     {
         console.log(resultData);
         alert("Employee Registered Updateddd")
@@ -105,7 +105,7 @@ constructor(private http: HttpClient )
   {
     
     
-    this.http.delete("http://localhost:8080/api/v1/customer/deleteCustomer"+ "/"+ data.customerid,{responseType: 'text'}).subscribe((resultData: any)=>
+    this.http.delete("https://springboot-app-azure.azurewebsites.net/api/v1/customer/deleteCustomer"+ "/"+ data.customerid,{responseType: 'text'}).subscribe((resultData: any)=>
     {
         console.log(resultData);
         alert("Employee Deletedddd")
